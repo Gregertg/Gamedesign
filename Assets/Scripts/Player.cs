@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -66,6 +67,9 @@ public class Player : MonoBehaviour
             friendsAmount.text = "Friends: " + friends;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
+        }
+        if(collision.gameObject.tag == "Guards"){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if(collision.gameObject.tag == "Walls"){
             if(Input.GetKey(KeyCode.LeftArrow)){
