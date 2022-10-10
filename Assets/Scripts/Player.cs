@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
         }
+            timeStart += Time.deltaTime;
+            textBox.text = timeStart.ToString("F2");
         }
         
         else{
