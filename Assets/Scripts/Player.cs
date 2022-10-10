@@ -18,10 +18,13 @@ public class Player : MonoBehaviour
     public int yPos;
     public int objectToGenerate;
     public int objectQuantity;
+
+    public float timeStart;
+    public Text textBox;
     // Start is called before the first frame update
     void Start()
     {
-        
+        textBox.text = timeStart.ToString("F2");
     }
 
 // legge inn en timer og ha etter 1 min skal venstre pil bli høyre. etter to min skal speeden gå fort
@@ -30,17 +33,37 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.Translate(-speed * Time.deltaTime,0,0);
+        if(timeStart >= 8){
+            if(Input.GetKey(KeyCode.LeftArrow)){
+                transform.Translate(speed * Time.deltaTime,0,0);
         }
-        if(Input.GetKey(KeyCode.RightArrow)){
-            transform.Translate(speed * Time.deltaTime,0,0);
+            if(Input.GetKey(KeyCode.RightArrow)){
+                transform.Translate(-speed * Time.deltaTime,0,0);
         }
-        if(Input.GetKey(KeyCode.UpArrow)){
-            transform.Translate(0,speed * Time.deltaTime,0);
+            if(Input.GetKey(KeyCode.UpArrow)){
+                transform.Translate(0,-speed * Time.deltaTime,0);
         }
-        if(Input.GetKey(KeyCode.DownArrow)){
-            transform.Translate(0,-speed * Time.deltaTime,0);
+            if(Input.GetKey(KeyCode.DownArrow)){
+                transform.Translate(0,speed * Time.deltaTime,0);
+        }
+        }
+        
+        else{
+            if(Input.GetKey(KeyCode.LeftArrow)){
+                transform.Translate(-speed * Time.deltaTime,0,0);
+            }
+            if(Input.GetKey(KeyCode.RightArrow)){
+                transform.Translate(speed * Time.deltaTime,0,0);
+            }
+            if(Input.GetKey(KeyCode.UpArrow)){
+                transform.Translate(0,speed * Time.deltaTime,0);
+            }
+            if(Input.GetKey(KeyCode.DownArrow)){
+                transform.Translate(0,-speed * Time.deltaTime,0);
+            }
+
+            timeStart += Time.deltaTime;
+            textBox.text = timeStart.ToString("F2");
         }
     }
 
