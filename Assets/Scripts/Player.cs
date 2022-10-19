@@ -21,10 +21,18 @@ public class Player : MonoBehaviour
 
     public float timeStart;
     public Text textBox;
+
+    public int maxHealth = 100;
+	public int currentHealth;
+
+    public HealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         textBox.text = timeStart.ToString("F2");
+        currentHealth = maxHealth;
+		healthBar.SetMaxHealth(maxHealth);
     }
 
 // legge inn en timer og ha etter 1 min skal venstre pil bli høyre. etter to min skal speeden gå fort
@@ -64,10 +72,22 @@ public class Player : MonoBehaviour
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
 
+            if (Input.GetKeyDown(KeyCode.Space))
+		{
+			TakeDamage(20);
+		}
+
             timeStart += Time.deltaTime;
             textBox.text = timeStart.ToString("F2");
         }
     }
+
+    void TakeDamage(int damage)
+	{
+		currentHealth -= damage;
+
+		healthBar.SetHealth(currentHealth);
+	}
 
             IEnumerator GenerateObjects(){
                 objectToGenerate = Random.Range(1,4);
