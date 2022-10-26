@@ -12,14 +12,14 @@ public class Drunkenness : MonoBehaviour
     void Start()
     {
         curDrunkenness = 50;
+
+        // Kjører funksjonen UpdateDrunkenness hvert sekund med et sekund delay i starten
+        InvokeRepeating("UpdateDrunkenness", 1f, 1f);
     }
 
-    void Update()
+    void UpdateDrunkenness()
     {
-        if( Input.GetKeyDown( KeyCode.Space ) )
-        {
-            DamagePlayer(10);
-        }
+        DamagePlayer(1);
     }
 
     public void DamagePlayer( int damage )
