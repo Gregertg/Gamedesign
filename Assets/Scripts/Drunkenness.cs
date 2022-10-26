@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Drunkenness : MonoBehaviour
 {
-    public int curDrunkenness = 0;
+    public int curDrunkenness;
     public int maxDrunkenness = 100;
 
     public DrunkBar drunkBar;
 
     void Start()
     {
-        curDrunkenness = maxDrunkenness;
+        curDrunkenness = 50;
     }
 
     void Update()

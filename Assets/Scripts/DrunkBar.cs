@@ -14,7 +14,7 @@ public class DrunkBar : MonoBehaviour
         playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
         drunkBar = GetComponent<Slider>();
         drunkBar.maxValue = playerDrunkenness.maxDrunkenness;
-        drunkBar.value = playerDrunkenness.maxDrunkenness;
+        drunkBar.value = playerDrunkenness.curDrunkenness;
     }
 
     public void SetDrunkenness(int hp)
