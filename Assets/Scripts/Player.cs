@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public GameObject thirdFriend;
     public int xPos;
     public int yPos;
+
+    public int room;
     public int objectToGenerate;
     public int objectQuantity;
 
@@ -27,8 +29,6 @@ public class Player : MonoBehaviour
     {
         textBox.text = timeStart.ToString("F2");
     }
-
-// legge inn en timer og ha etter 1 min skal venstre pil bli høyre. etter to min skal speeden gå fort
 
 
     // Update is called once per frame
@@ -73,8 +73,17 @@ public class Player : MonoBehaviour
 
             IEnumerator GenerateObjects(){
                 objectToGenerate = Random.Range(1,4);
-                xPos = Random.Range(-9,9);
-                yPos = Random.Range(-4,4);
+                room = Random.Range(1,4);
+                if(room == 1){
+                    xPos = Random.Range(-9,9);
+                    yPos = Random.Range(-4,4);
+                }else if(room == 2){
+                    xPos = Random.Range(-2,16);
+                    yPos = Random.Range(9,18); 
+                }else if(room == 3){
+                    xPos = Random.Range(-25,-6);
+                    yPos = Random.Range(6,15);  
+                }
                 if(objectToGenerate == 1){
                     Instantiate(firstFriend, new Vector3(xPos, yPos, 0), Quaternion.identity);
                 }
