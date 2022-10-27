@@ -6,6 +6,7 @@ public class Drunkenness : MonoBehaviour
 {
     public int curDrunkenness;
     public int maxDrunkenness = 100;
+    public float speed = 5.0f;
 
     public DrunkBar drunkBar;
 

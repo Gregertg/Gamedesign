@@ -24,17 +24,20 @@ public class Player : MonoBehaviour
     public float timeStart;
     public Text textBox;
 
+    public Drunkenness playerDrunkenness;
+
     // Start is called before the first frame update
     void Start()
     {
-        textBox.text = timeStart.ToString("F2");
+        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(timeStart >= 8){
+        // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
+        if(playerDrunkenness.curDrunkenness <= 30){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
         }
@@ -64,11 +67,7 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
-
-
-            timeStart += Time.deltaTime;
-            textBox.text = timeStart.ToString("F2");
-        }
+       }
     }
 
             IEnumerator GenerateObjects(){
