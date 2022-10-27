@@ -37,7 +37,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
-        if(playerDrunkenness.curDrunkenness <= 30){
+        if(playerDrunkenness.curDrunkenness <=20){
+            speed = 2.0f;
+        }
+
+        if(playerDrunkenness.curDrunkenness <= 40){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
         }
