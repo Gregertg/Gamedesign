@@ -68,7 +68,6 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
-
         }
     }
 
@@ -103,6 +102,10 @@ public class Player : MonoBehaviour
             friendsAmount.text = "Friends: " + friends;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
+        }
+        if(collision.gameObject.tag == "Beer"){
+            playerDrunkenness.curDrunkenness += 20;
+            Destroy(collision.gameObject);
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
