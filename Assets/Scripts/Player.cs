@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
+       playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
     }
 
 
