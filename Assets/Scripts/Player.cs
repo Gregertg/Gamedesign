@@ -14,6 +14,11 @@ public class Player : MonoBehaviour
     public GameObject firstFriend;
     public GameObject secondFriend;
     public GameObject thirdFriend;
+
+
+    public GameObject firstBeer;
+    public GameObject secBeer;
+    public GameObject thirdBeer;
     public int xPos;
     public int yPos;
 
@@ -75,14 +80,14 @@ public class Player : MonoBehaviour
                 objectToGenerate = Random.Range(1,4);
                 room = Random.Range(1,4);
                 if(room == 1){
-                    xPos = Random.Range(-9,9);
-                    yPos = Random.Range(-4,4);
+                    xPos = Random.Range(-7,10);
+                    yPos = Random.Range(-3,5);
                 }else if(room == 2){
                     xPos = Random.Range(-2,16);
-                    yPos = Random.Range(9,18); 
+                    yPos = Random.Range(12,20); 
                 }else if(room == 3){
-                    xPos = Random.Range(-25,-6);
-                    yPos = Random.Range(6,15);  
+                    xPos = Random.Range(-24,-7);
+                    yPos = Random.Range(9,17);  
                 }
                 if(objectToGenerate == 1){
                     Instantiate(firstFriend, new Vector3(xPos, yPos, 0), Quaternion.identity);
@@ -92,6 +97,31 @@ public class Player : MonoBehaviour
                 }
                 if(objectToGenerate == 3){
                     Instantiate(thirdFriend, new Vector3(xPos, yPos, 0), Quaternion.identity);
+                }
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            IEnumerator GenerateBeers(){
+                objectToGenerate = Random.Range(1,4);
+                room = Random.Range(1,4);
+                if(room == 1){
+                    xPos = Random.Range(-7,10);
+                    yPos = Random.Range(-3,5);
+                }else if(room == 2){
+                    xPos = Random.Range(-2,16);
+                    yPos = Random.Range(12,20); 
+                }else if(room == 3){
+                    xPos = Random.Range(-24,-7);
+                    yPos = Random.Range(9,17);  
+                }
+                if(objectToGenerate == 1){
+                    Instantiate(firstBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
+                }
+                if(objectToGenerate == 2){
+                    Instantiate(secBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
+                }
+                if(objectToGenerate == 3){
+                    Instantiate(thirdBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
                 }
                 yield return new WaitForSeconds(0.1f);
             }
@@ -106,6 +136,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Beer"){
             playerDrunkenness.curDrunkenness += 20;
             Destroy(collision.gameObject);
+            StartCoroutine(GenerateBeers());
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
