@@ -21,15 +21,14 @@ public class Player : MonoBehaviour
     public int objectToGenerate;
     public int objectQuantity;
 
-    public float timeStart;
-    public Text textBox;
-
     public Drunkenness playerDrunkenness;
+
+    public Tid tid;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
+       // playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
     }
 
 
@@ -37,11 +36,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
-        if(playerDrunkenness.curDrunkenness <=20){
+        if(tid.timer >= 1430){
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness <= 40){
+        if(tid.timer >= 1435){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
         }
@@ -54,8 +53,6 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
         }
-            //timeStart += Time.deltaTime;
-            //textBox.text = timeStart.ToString("F2");
         }
         
         else{
@@ -72,9 +69,6 @@ public class Player : MonoBehaviour
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
 
-
-            //timeStart += Time.deltaTime;
-            //textBox.text = timeStart.ToString("F2");
         }
     }
 
@@ -102,7 +96,6 @@ public class Player : MonoBehaviour
                 }
                 yield return new WaitForSeconds(0.1f);
             }
-
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Friends"){

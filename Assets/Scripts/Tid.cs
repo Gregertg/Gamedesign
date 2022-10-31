@@ -7,16 +7,16 @@ public class Tid : MonoBehaviour
 {
 
     public TMP_Text textTimer;
-    private float timer = 1320.0f; //how long since the timer "started"
+    public float timer = 1420.0f; //how long since the timer "started"
  
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime;   
         DisplayTid();
         if (timer == 1440){
             timer = 0.0f;
-        }
+        }     
     }
 
     void DisplayTid(){
