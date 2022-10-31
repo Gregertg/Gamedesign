@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness <= 40){
+        if(playerDrunkenness.curDrunkenness >= 70){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
         }
@@ -103,6 +103,10 @@ public class Player : MonoBehaviour
             friendsAmount.text = "Friends: " + friends;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
+        }
+        if(collision.gameObject.tag == "Beer"){
+            playerDrunkenness.curDrunkenness += 20;
+            Destroy(collision.gameObject);
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
