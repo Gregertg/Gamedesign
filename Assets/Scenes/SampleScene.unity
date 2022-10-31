@@ -399,6 +399,7 @@ MonoBehaviour:
   objectToGenerate: 0
   objectQuantity: 0
   playerDrunkenness: {fileID: 0}
+  tid: {fileID: 1696482580}
 --- !u!212 &85695563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2646,7 +2647,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1696482578}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5438,7 +5439,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1994452449}
-  - {fileID: 1609306791}
   - {fileID: 948217330}
   - {fileID: 1914780373}
   - {fileID: 1771690877}
@@ -5483,6 +5483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 1771690875}
+  timer: 1420
 --- !u!1 &1703870316
 GameObject:
   m_ObjectHideFlags: 0
@@ -6010,7 +6011,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1696482578}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6218,7 +6219,7 @@ RectTransform:
   - {fileID: 1017398547}
   - {fileID: 1645687720}
   m_Father: {fileID: 1696482578}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

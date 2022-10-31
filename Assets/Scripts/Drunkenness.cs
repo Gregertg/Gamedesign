@@ -15,7 +15,7 @@ public class Drunkenness : MonoBehaviour
         curDrunkenness = 50;
 
         // Kjører funksjonen UpdateDrunkenness hvert sekund med et sekund delay i starten
-        InvokeRepeating("UpdateDrunkenness", 1f, 1f);
+        //InvokeRepeating("UpdateDrunkenness", 1f, 1f);
     }
 
     void UpdateDrunkenness()

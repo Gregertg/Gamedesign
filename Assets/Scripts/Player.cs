@@ -23,21 +23,24 @@ public class Player : MonoBehaviour
 
     public Drunkenness playerDrunkenness;
 
+    public Tid tid;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
+       // playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(playerDrunkenness.curDrunkenness <=20){
+        // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
+        if(tid.timer >= 1430){
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness >= 70){
+        if(tid.timer >= 1435){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
         }
@@ -92,7 +95,6 @@ public class Player : MonoBehaviour
                 }
                 yield return new WaitForSeconds(0.1f);
             }
-
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Friends"){
