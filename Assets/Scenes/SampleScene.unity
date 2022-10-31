@@ -398,8 +398,6 @@ MonoBehaviour:
   room: 0
   objectToGenerate: 0
   objectQuantity: 0
-  timeStart: 0
-  textBox: {fileID: 0}
   playerDrunkenness: {fileID: 0}
 --- !u!212 &85695563
 SpriteRenderer:
@@ -4826,8 +4824,6 @@ MonoBehaviour:
   room: 0
   objectToGenerate: 0
   objectQuantity: 0
-  timeStart: 0
-  textBox: {fileID: 1609306793}
   playerDrunkenness: {fileID: 0}
 --- !u!114 &1609306793
 MonoBehaviour:
@@ -6936,7 +6932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076580754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.27, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0.02, z: 0}
   m_LocalScale: {x: 3.1201, y: 1.668, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

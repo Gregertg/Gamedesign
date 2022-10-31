@@ -21,9 +21,6 @@ public class Player : MonoBehaviour
     public int objectToGenerate;
     public int objectQuantity;
 
-    public float timeStart;
-    public Text textBox;
-
     public Drunkenness playerDrunkenness;
 
     // Start is called before the first frame update
