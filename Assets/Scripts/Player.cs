@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
         if(playerDrunkenness.curDrunkenness <=20){
             speed = 2.0f;
         }
@@ -54,8 +53,6 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
         }
-            //timeStart += Time.deltaTime;
-            //textBox.text = timeStart.ToString("F2");
         }
         
         else{
@@ -71,10 +68,6 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
-
-
-            //timeStart += Time.deltaTime;
-            //textBox.text = timeStart.ToString("F2");
         }
     }
 
