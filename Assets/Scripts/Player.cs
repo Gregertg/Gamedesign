@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness <= 70){
+        if(playerDrunkenness.curDrunkenness >= 70){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
         }
