@@ -17,8 +17,7 @@ public class Player : MonoBehaviour
 
 
     public GameObject firstBeer;
-    public GameObject secBeer;
-    public GameObject thirdBeer;
+ 
     public int xPos;
     public int yPos;
 
@@ -102,7 +101,6 @@ public class Player : MonoBehaviour
             }
 
             IEnumerator GenerateBeers(){
-                objectToGenerate = Random.Range(1,4);
                 room = Random.Range(1,4);
                 if(room == 1){
                     xPos = Random.Range(-7,10);
@@ -114,15 +112,8 @@ public class Player : MonoBehaviour
                     xPos = Random.Range(-24,-7);
                     yPos = Random.Range(9,17);  
                 }
-                if(objectToGenerate == 1){
-                    Instantiate(firstBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
-                }
-                if(objectToGenerate == 2){
-                    Instantiate(secBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
-                }
-                if(objectToGenerate == 3){
-                    Instantiate(thirdBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
-                }
+                Instantiate(firstBeer, new Vector3(xPos, yPos, 0), Quaternion.identity);
+                
                 yield return new WaitForSeconds(0.1f);
             }
 
