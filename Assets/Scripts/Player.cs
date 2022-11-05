@@ -34,9 +34,6 @@ public class Player : MonoBehaviour
     void Start()
     {
        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
-       if(tid.timer == 1440){
-           tid.timer = 0;
-       }
     }
 
 
