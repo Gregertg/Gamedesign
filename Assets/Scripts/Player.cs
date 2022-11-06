@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    Rigidbody2D rb;
     public float speed = 5.0f;
     public int friends = 0;
 
@@ -14,7 +15,6 @@ public class Player : MonoBehaviour
     public GameObject firstFriend;
     public GameObject secondFriend;
     public GameObject thirdFriend;
-
 
     public GameObject firstBeer;
  
@@ -29,10 +29,12 @@ public class Player : MonoBehaviour
 
     public Tid tid;
 
+    bool facingRight = true;
     // Start is called before the first frame update
     void Start()
     {
        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
+       rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
 
@@ -47,9 +49,11 @@ public class Player : MonoBehaviour
         if(playerDrunkenness.curDrunkenness >= 70){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
+                gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
         }
             if(Input.GetKey(KeyCode.RightArrow)){
                 transform.Translate(-speed * Time.deltaTime,0,0);
+                gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
         }
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
@@ -62,9 +66,11 @@ public class Player : MonoBehaviour
         else{
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(-speed * Time.deltaTime,0,0);
+                gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
             }
             if(Input.GetKey(KeyCode.RightArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
+                gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
             }
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
@@ -147,6 +153,14 @@ public class Player : MonoBehaviour
             }
         }
   
+    }
+
+    void flip(){
+        Vector3 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
+
+        facingRight = !facingRight;
     }
 }
 
