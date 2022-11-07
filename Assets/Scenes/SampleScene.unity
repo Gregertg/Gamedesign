@@ -418,11 +418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.z
@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 85695566}
   - component: {fileID: 85695565}
   - component: {fileID: 85695567}
+  - component: {fileID: 85695568}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -538,6 +539,7 @@ MonoBehaviour:
   objectQuantity: 0
   playerDrunkenness: {fileID: 0}
   tid: {fileID: 0}
+  animator: {fileID: 85695568}
 --- !u!212 &85695563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -668,6 +670,26 @@ MonoBehaviour:
   maxDrunkenness: 100
   speed: 5
   drunkBar: {fileID: 1914780374}
+--- !u!95 &85695568
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85695561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a54b6174d15174371b65e8466558aa5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &85739613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,11 +2452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.z
@@ -6460,7 +6482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 1771690875}
-  timer: 1420
 --- !u!1 &1703870316
 GameObject:
   m_ObjectHideFlags: 0
@@ -8677,11 +8698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061265899304343899, guid: 465e2797bc80247b2bc3092c66c082b1, type: 3}
       propertyPath: m_LocalScale.z

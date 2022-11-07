@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     public Tid tid;
 
     bool facingRight = true;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +50,12 @@ public class Player : MonoBehaviour
 
         if(playerDrunkenness.curDrunkenness >= 70){
             if(Input.GetKey(KeyCode.LeftArrow)){
+                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(speed * Time.deltaTime,0,0);
-                gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
+                //gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
         }
             if(Input.GetKey(KeyCode.RightArrow)){
+                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
                 gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
         }
@@ -65,10 +69,12 @@ public class Player : MonoBehaviour
         
         else{
             if(Input.GetKey(KeyCode.LeftArrow)){
+                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
-                gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
+                //gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
             }
             if(Input.GetKey(KeyCode.RightArrow)){
+                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(speed * Time.deltaTime,0,0);
                 gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
             }
@@ -79,6 +85,8 @@ public class Player : MonoBehaviour
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
         }
+
+        
     }
 
             IEnumerator GenerateObjects(){
