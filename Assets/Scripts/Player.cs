@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
     public Drunkenness playerDrunkenness;
 
+    public AudioSource beerSource;
+
     public Tid tid;
 
     bool facingRight = true;
@@ -142,6 +144,7 @@ public class Player : MonoBehaviour
             playerDrunkenness.curDrunkenness += 20;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateBeers());
+            beerSource.Play();
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
