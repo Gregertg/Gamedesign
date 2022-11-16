@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     public Drunkenness playerDrunkenness;
 
     public AudioSource beerSource;
+    public AudioSource friendSource;
+    public AudioSource guardSource;
 
     public Tid tid;
 
@@ -133,12 +135,15 @@ public class Player : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
+            
+
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Friends"){
             friends++;
             friendsAmount.text = "Friends: " + friends;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
+            friendSource.Play();
         }
         if(collision.gameObject.tag == "Beer"){
             playerDrunkenness.curDrunkenness += 20;
@@ -147,6 +152,7 @@ public class Player : MonoBehaviour
             beerSource.Play();
         }
         if(collision.gameObject.tag == "Guards"){
+            guardSource.Play(); // Bug: Denne blir ikke spilt av før neste scene loades 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if(collision.gameObject.tag == "Walls"){
