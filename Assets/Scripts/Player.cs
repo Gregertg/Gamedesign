@@ -88,7 +88,6 @@ public class Player : MonoBehaviour
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
         }
-
         
     }
 
@@ -134,7 +133,6 @@ public class Player : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-            
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Friends"){
@@ -151,7 +149,7 @@ public class Player : MonoBehaviour
             beerSource.Play();
         }
         if(collision.gameObject.tag == "Guards"){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("YouLost");
         }
         if(collision.gameObject.tag == "Walls"){
             if(Input.GetKey(KeyCode.LeftArrow)){

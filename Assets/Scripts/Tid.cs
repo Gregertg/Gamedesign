@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Tid : MonoBehaviour
 {
 
     public TMP_Text textTimer;
-    private float timer = 1320.0f; //how long since the timer "started"
+    public float timer = 1320.0f; //how long since the timer "started"
 
     // Update is called once per frame
     void FixedUpdate()
     {
         timer += Time.deltaTime;   
         DisplayTid();
+        if(timer > 1340){
+            SceneManager.LoadScene("YouWon");
+        }
         if (timer > 1440){
             timer = 0.0f;
         }     
