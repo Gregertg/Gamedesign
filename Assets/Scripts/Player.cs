@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
 
     public AudioSource beerSource;
     public AudioSource friendSource;
-    public AudioSource guardSource;
 
     public Tid tid;
 
@@ -152,7 +151,6 @@ public class Player : MonoBehaviour
             beerSource.Play();
         }
         if(collision.gameObject.tag == "Guards"){
-            guardSource.Play(); // Bug: Denne blir ikke spilt av før neste scene loades 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if(collision.gameObject.tag == "Walls"){
