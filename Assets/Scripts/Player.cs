@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     bool right = true;
+
+    public ParticleSystem dust;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,15 +59,18 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
                 animator.SetFloat("Horizontal", 1);
+                CreateDust();
         }
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
                 animator.SetFloat("Horizontal", 1);
+                CreateDust();
             }
             if(Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(speed * Time.deltaTime,0,0);
                 right = true;
+                CreateDust();
                 //gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
         }
             if(Input.GetKey(KeyCode.RightArrow)){
@@ -73,6 +78,7 @@ public class Player : MonoBehaviour
                 transform.Translate(-speed * Time.deltaTime,0,0);
                 gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
                 right = false;
+                CreateDust();
         }
         }
         
@@ -80,15 +86,18 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
                 animator.SetFloat("Horizontal", 1);
+                CreateDust();
             }
             if(Input.GetKey(KeyCode.DownArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
                 animator.SetFloat("Horizontal", 1);
+                CreateDust();
             }
             if(Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
                 right = false;
+                CreateDust();
                 //gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
             }
             if(Input.GetKey(KeyCode.RightArrow)){
@@ -96,6 +105,7 @@ public class Player : MonoBehaviour
                 transform.Translate(speed * Time.deltaTime,0,0);
                 gameObject.transform.localScale = new Vector3(0.3f,0.3f,1);
                 right = true;
+                CreateDust();
             }
 
         }
@@ -196,6 +206,10 @@ public class Player : MonoBehaviour
         transform.localScale = currentScale;
 
         facingRight = !facingRight;
+    }
+
+    void CreateDust(){
+        dust.Play();
     }
 }
 
