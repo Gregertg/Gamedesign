@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     bool facingRight = true;
 
     public Animator animator;
+
+    bool right = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,12 +57,14 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(speed * Time.deltaTime,0,0);
+                right = true;
                 //gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
         }
             if(Input.GetKey(KeyCode.RightArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
                 gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
+                right = false;
         }
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
@@ -74,12 +78,14 @@ public class Player : MonoBehaviour
             if(Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
+                right = false;
                 //gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
             }
             if(Input.GetKey(KeyCode.RightArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(speed * Time.deltaTime,0,0);
                 gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
+                right = true;
             }
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,speed * Time.deltaTime,0);
@@ -88,7 +94,18 @@ public class Player : MonoBehaviour
                 transform.Translate(0,-speed * Time.deltaTime,0);
             }
         }
-        
+        if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)){
+            animator.SetFloat("Horizontal", 0);
+            if(right == false && playerDrunkenness.curDrunkenness >= 70){
+                gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
+            }else if(right == true && playerDrunkenness.curDrunkenness >= 70){
+                gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
+            }else if(right == false && playerDrunkenness.curDrunkenness < 70){
+                gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
+            }else if(right == true && playerDrunkenness.curDrunkenness < 70){
+                gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
+            }
+        }
     }
 
             IEnumerator GenerateObjects(){
