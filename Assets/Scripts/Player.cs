@@ -111,9 +111,9 @@ public class Player : MonoBehaviour
         }
         if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)){
             animator.SetFloat("Horizontal", 0);
-            if(right == false && playerDrunkenness.curDrunkenness > 70){
+            if(right == false && playerDrunkenness.curDrunkenness >= 70){
                 gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
-            }else if(right == true && playerDrunkenness.curDrunkenness > 70){
+            }else if(right == true && playerDrunkenness.curDrunkenness >= 70){
                 gameObject.transform.localScale = new Vector3(0.3f,0.3f,1);
             }else if(right == false && playerDrunkenness.curDrunkenness < 70){
                 gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
