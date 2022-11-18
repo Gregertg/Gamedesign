@@ -54,6 +54,14 @@ public class Player : MonoBehaviour
         }
 
         if(playerDrunkenness.curDrunkenness >= 70){
+            if(Input.GetKey(KeyCode.UpArrow)){
+                transform.Translate(0,-speed * Time.deltaTime,0);
+                animator.SetFloat("Horizontal", 1);
+        }
+            if(Input.GetKey(KeyCode.DownArrow)){
+                transform.Translate(0,speed * Time.deltaTime,0);
+                animator.SetFloat("Horizontal", 1);
+            }
             if(Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(speed * Time.deltaTime,0,0);
@@ -66,15 +74,17 @@ public class Player : MonoBehaviour
                 gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
                 right = false;
         }
-            if(Input.GetKey(KeyCode.UpArrow)){
-                transform.Translate(0,-speed * Time.deltaTime,0);
-        }
-            if(Input.GetKey(KeyCode.DownArrow)){
-                transform.Translate(0,speed * Time.deltaTime,0);
-        }
         }
         
         else{
+            if(Input.GetKey(KeyCode.UpArrow)){
+                transform.Translate(0,speed * Time.deltaTime,0);
+                animator.SetFloat("Horizontal", 1);
+            }
+            if(Input.GetKey(KeyCode.DownArrow)){
+                transform.Translate(0,-speed * Time.deltaTime,0);
+                animator.SetFloat("Horizontal", 1);
+            }
             if(Input.GetKey(KeyCode.LeftArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
@@ -87,18 +97,13 @@ public class Player : MonoBehaviour
                 gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
                 right = true;
             }
-            if(Input.GetKey(KeyCode.UpArrow)){
-                transform.Translate(0,speed * Time.deltaTime,0);
-            }
-            if(Input.GetKey(KeyCode.DownArrow)){
-                transform.Translate(0,-speed * Time.deltaTime,0);
-            }
+
         }
         if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)){
             animator.SetFloat("Horizontal", 0);
-            if(right == false && playerDrunkenness.curDrunkenness >= 70){
+            if(right == false && playerDrunkenness.curDrunkenness > 70){
                 gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
-            }else if(right == true && playerDrunkenness.curDrunkenness >= 70){
+            }else if(right == true && playerDrunkenness.curDrunkenness > 70){
                 gameObject.transform.localScale = new Vector3(1.2f,1.2f,1);
             }else if(right == false && playerDrunkenness.curDrunkenness < 70){
                 gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
