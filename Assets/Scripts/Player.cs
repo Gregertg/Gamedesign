@@ -94,11 +94,11 @@ public class Player : MonoBehaviour
                 CreateDust();
             }
             if(Input.GetKey(KeyCode.LeftArrow)){
-                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+                animator.SetFloat("Horizontal", -1);
                 transform.Translate(-speed * Time.deltaTime,0,0);
                 right = false;
                 CreateDust();
-                //gameObject.transform.localScale = new Vector3(-1.2f,1.2f,1);
+                //gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
             }
             if(Input.GetKey(KeyCode.RightArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
@@ -112,13 +112,13 @@ public class Player : MonoBehaviour
         if(!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)){
             animator.SetFloat("Horizontal", 0);
             if(right == false && playerDrunkenness.curDrunkenness >= 70){
-                gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
+                gameObject.transform.localScale = new Vector3(-0.3f,0.3f,0.001f);
             }else if(right == true && playerDrunkenness.curDrunkenness >= 70){
-                gameObject.transform.localScale = new Vector3(0.3f,0.3f,1);
+                gameObject.transform.localScale = new Vector3(0.3f,0.3f,0.001f);
             }else if(right == false && playerDrunkenness.curDrunkenness < 70){
-                gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
+                gameObject.transform.localScale = new Vector3(-0.3f,0.3f,0.001f);
             }else if(right == true && playerDrunkenness.curDrunkenness < 70){
-                gameObject.transform.localScale = new Vector3(0.3f,0.3f,1);
+                gameObject.transform.localScale = new Vector3(0.3f,0.3f,0.001f);
             }
         }
     }
