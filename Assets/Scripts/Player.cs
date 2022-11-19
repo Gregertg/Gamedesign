@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
         if(playerDrunkenness.curDrunkenness <=20){
@@ -94,11 +94,11 @@ public class Player : MonoBehaviour
                 CreateDust();
             }
             if(Input.GetKey(KeyCode.LeftArrow)){
-                animator.SetFloat("Horizontal", -1);
+                //animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
                 transform.Translate(-speed * Time.deltaTime,0,0);
+                gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
                 right = false;
                 CreateDust();
-                //gameObject.transform.localScale = new Vector3(-0.3f,0.3f,1);
             }
             if(Input.GetKey(KeyCode.RightArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
