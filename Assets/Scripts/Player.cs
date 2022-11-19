@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     bool right = true;
+    
 
     public ParticleSystem dust;
     // Start is called before the first frame update
