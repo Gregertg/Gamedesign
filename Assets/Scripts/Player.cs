@@ -131,8 +131,8 @@ public class Player : MonoBehaviour
                     xPos = Random.Range(-13,6);
                     yPos = Random.Range(21,31);
                 }else if(room == 2){
-                    xPos = Random.Range(-13,6);
-                    yPos = Random.Range(21,31); 
+                    xPos = Random.Range(22,48);
+                    yPos = Random.Range(23,29); 
                 }else if(room == 3){
                     xPos = Random.Range(-13,6);
                     yPos = Random.Range(21,31);  
