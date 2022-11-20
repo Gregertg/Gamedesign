@@ -128,14 +128,14 @@ public class Player : MonoBehaviour
                 objectToGenerate = Random.Range(1,4);
                 room = Random.Range(1,4);
                 if(room == 1){
-                    xPos = Random.Range(-7,10);
-                    yPos = Random.Range(-3,5);
+                    xPos = Random.Range(-13,6);
+                    yPos = Random.Range(21,31);
                 }else if(room == 2){
-                    xPos = Random.Range(-2,16);
-                    yPos = Random.Range(12,20); 
+                    xPos = Random.Range(-13,6);
+                    yPos = Random.Range(21,31); 
                 }else if(room == 3){
-                    xPos = Random.Range(-24,-7);
-                    yPos = Random.Range(9,17);  
+                    xPos = Random.Range(-13,6);
+                    yPos = Random.Range(21,31);  
                 }
                 if(objectToGenerate == 1){
                     Instantiate(firstFriend, new Vector3(xPos, yPos, 0), Quaternion.identity);
