@@ -170,8 +170,9 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag == "Friends"){
             friends++;
-            friendsAmount.text = "Friends: " + friends;
+            friendsAmount.text = "x " + friends;
             Destroy(collision.gameObject);
+            StartCoroutine(GenerateObjects());
             StartCoroutine(GenerateObjects());
             friendSource.Play();
         }
