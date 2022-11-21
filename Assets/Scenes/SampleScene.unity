@@ -675,6 +675,8 @@ MonoBehaviour:
   friendSource: {fileID: 142371023}
   tid: {fileID: 0}
   animator: {fileID: 85695568}
+  m_Image: {fileID: 21300000, guid: 27d0d2316c3ab48e0bda4ede0fff0cfc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1774115d8b4d46f6920f5d3a1b5350c, type: 3}
   dust: {fileID: 1471318313}
 --- !u!212 &85695563
 SpriteRenderer:

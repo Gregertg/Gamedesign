@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
 
     bool right = true;
     
+    public Sprite byNight;
+    //Set this in the Inspector
+    public GameObject byDay;
 
     public ParticleSystem dust;
     // Start is called before the first frame update
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        speed = 5.0f;
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
         if(playerDrunkenness.curDrunkenness <=20){
             speed = 2.0f;
@@ -122,6 +126,10 @@ public class Player : MonoBehaviour
                 gameObject.transform.localScale = new Vector3(0.3f,0.3f,0.001f);
             }
         }
+        if(tid.timer > 1360){
+            byDay.GetComponent<SpriteRenderer>().sprite = byNight;
+        }
+
     }
 
            public IEnumerator GenerateObjects(){
@@ -178,7 +186,6 @@ public class Player : MonoBehaviour
             friends++;
             friendsAmount.text = "x " + friends;
             Destroy(collision.gameObject);
-            StartCoroutine(GenerateObjects());
             StartCoroutine(GenerateObjects());
             friendSource.Play();
         }

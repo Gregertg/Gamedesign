@@ -15,7 +15,7 @@ public class Tid : MonoBehaviour
     {
         timer += Time.deltaTime;   
         DisplayTid();
-        if(timer > 1560){
+        if(timer > 1460){
             SceneManager.LoadScene("YouWon");
         }
         if (timer > 1440){
