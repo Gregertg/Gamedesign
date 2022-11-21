@@ -8,7 +8,7 @@ public class Tid : MonoBehaviour
 {
 
     public TMP_Text textTimer;
-    public float timer = 1320.0f; //how long since the timer "started"
+    public float timer = 1380.0f; //how long since the timer "started"
 
     // Update is called once per frame
     void FixedUpdate()
