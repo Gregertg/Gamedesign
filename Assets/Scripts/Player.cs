@@ -124,18 +124,24 @@ public class Player : MonoBehaviour
         }
     }
 
-            IEnumerator GenerateObjects(){
+           public IEnumerator GenerateObjects(){
                 objectToGenerate = Random.Range(1,4);
                 room = Random.Range(1,4);
+
                 if(room == 1){
                     xPos = Random.Range(-13,6);
                     yPos = Random.Range(21,31);
+                    
                 }else if(room == 2){
                     xPos = Random.Range(22,48);
                     yPos = Random.Range(23,29); 
                 }else if(room == 3){
                     xPos = Random.Range(-13,6);
                     yPos = Random.Range(21,31);  
+                }
+                while(Physics2D.OverlapCircle(new Vector2(xPos,yPos),0.5f)){
+                    xPos = Random.Range(-13,6);
+                    yPos = Random.Range(21,31);
                 }
                 if(objectToGenerate == 1){
                     Instantiate(firstFriend, new Vector3(xPos, yPos, 0), Quaternion.identity);
