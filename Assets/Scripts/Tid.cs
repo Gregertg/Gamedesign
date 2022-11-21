@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Tid : MonoBehaviour
 {
-
     public TMP_Text textTimer;
-    public float timer = 1380.0f; //how long since the timer "started"
+    private float timer = 1380.0f; //how long since the timer "started"
+    //Set this in the Inspector
+    public GameObject byDay;
 
     // Update is called once per frame
     void FixedUpdate()
