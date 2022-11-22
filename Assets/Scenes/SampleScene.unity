@@ -741,7 +741,7 @@ MonoBehaviour:
   beerSource: {fileID: 854613670}
   friendSource: {fileID: 142371023}
   tid: {fileID: 0}
-  animator: {fileID: 1696482579}
+  animator: {fileID: 85695568}
   byNightStorsalen: {fileID: 21300000, guid: b1774115d8b4d46f6920f5d3a1b5350c, type: 3}
   byDayStorsalen: {fileID: 1955699813}
   byNightEdgar: {fileID: 21300000, guid: f1035bbfa2d8642709b46cc7c7a6d5b9, type: 3}
