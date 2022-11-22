@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
+    public Animator _beerAnimator;
+
     bool right = true;
     
     public Sprite byNightStorsalen;
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
     {
        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
        rb = gameObject.GetComponent<Rigidbody2D>();
+       _beerAnimator = GetComponent<Animator>();
     }
 
 
@@ -63,7 +66,18 @@ public class Player : MonoBehaviour
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness >= 70){
+        if(playerDrunkenness.curDrunkenness <= 70 && playerDrunkenness.curDrunkenness < 90) {
+            speed = 7.0f;
+            if(Input.GetKey(KeyCode.RightArrow)){
+                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+                transform.Translate(speed * Time.deltaTime,0,0);
+                gameObject.transform.localScale = new Vector3(0.3f,0.3f,1);
+                right = true;
+                CreateDust();
+            }
+        }
+
+        if(playerDrunkenness.curDrunkenness >= 90){
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
                 animator.SetFloat("Horizontal", 1);
@@ -191,6 +205,7 @@ public class Player : MonoBehaviour
             friendsAmount.text = "x " + friends;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
+            StartCoroutine(GenerateObjects());
             friendSource.Play();
         }
         if(collision.gameObject.tag == "Beer"){
@@ -198,6 +213,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             StartCoroutine(GenerateBeers());
             beerSource.Play();
+            _beerAnimator.SetTrigger("OnBeer");
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene("YouLost");
