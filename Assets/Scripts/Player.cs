@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     public GameObject byDayStorsalen;
     public Sprite byNightEdgar;
     public GameObject byDayEdgar;
+    public Sprite byNightRundhallen;
+    public GameObject byDayRundhallen;
     private float timer = 1380.0f; //how long since the timer "started"
 
     public ParticleSystem dust;
@@ -143,6 +145,7 @@ public class Player : MonoBehaviour
         if(timer > 1500.0f){
             byDayStorsalen.GetComponent<SpriteRenderer>().sprite = byNightStorsalen;
             byDayEdgar.GetComponent<SpriteRenderer>().sprite = byNightEdgar;
+            byDayRundhallen.GetComponent<SpriteRenderer>().sprite = byNightRundhallen;
         }
 
     }
