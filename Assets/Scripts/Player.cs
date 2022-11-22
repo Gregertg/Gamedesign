@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
                 gameObject.transform.localScale = new Vector3(0.3f,0.3f,0.001f);
             }
         }
-        if(timer > 1440.0f){
+        if(timer > 1500.0f){
             byDayStorsalen.GetComponent<SpriteRenderer>().sprite = byNightStorsalen;
             byDayEdgar.GetComponent<SpriteRenderer>().sprite = byNightEdgar;
         }

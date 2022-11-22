@@ -45,3 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Toga
+    uniqueID: 117673549
+    locked: 0
+  - name: Toga2
+    uniqueID: 875502893
+    locked: 0
