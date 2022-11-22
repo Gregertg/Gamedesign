@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         timer += Time.deltaTime;  
         speed = 5.0f;
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
-        if(playerDrunkenness.curDrunkenness <20){
+        if(playerDrunkenness.curDrunkenness < 19){
             speed = 2.0f;
         }
 

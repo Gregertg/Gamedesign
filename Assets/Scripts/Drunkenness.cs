@@ -20,7 +20,9 @@ public class Drunkenness : MonoBehaviour
 
     void UpdateDrunkenness()
     {
+        if (curDrunkenness > 0){
         DamagePlayer(1);
+        }
     }
 
     public void DamagePlayer( int damage )
