@@ -205,7 +205,6 @@ public class Player : MonoBehaviour
             friendsAmount.text = "x " + friends;
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
-            StartCoroutine(GenerateObjects());
             friendSource.Play();
         }
         if(collision.gameObject.tag == "Beer"){
