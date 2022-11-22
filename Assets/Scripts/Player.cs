@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
+    private Animator _beerAnimator;
+
     bool right = true;
     
 
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
     {
        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
        rb = gameObject.GetComponent<Rigidbody2D>();
+       _beerAnimator = GetComponent<Animator>();
     }
 
 
@@ -187,6 +190,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             StartCoroutine(GenerateBeers());
             beerSource.Play();
+            _beerAnimator.SetTrigger("OnBeer");
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene("YouLost");
