@@ -13448,11 +13448,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13461,11 +13457,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.1
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13474,11 +13466,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.2
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13487,11 +13475,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.4
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13500,11 +13484,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.8
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13513,11 +13493,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1.6
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13526,11 +13502,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 3.2
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13539,11 +13511,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 6.4
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13552,11 +13520,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 12.8
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13565,11 +13529,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 25.6
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13578,11 +13538,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 51.2
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13591,11 +13547,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 102.4
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13604,11 +13556,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 204.8
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13617,11 +13565,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 409.6
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13630,11 +13574,7 @@ AudioSource:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 500
-<<<<<<< HEAD
       value: 5.2285344e+26
-=======
-      value: 1.2196239e+17
->>>>>>> 566b29a67cb8279c811f4319538a09016019673c
       inSlope: 0
       outSlope: 0
       tangentMode: 0
