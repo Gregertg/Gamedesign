@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Tid : MonoBehaviour
 {
     public TMP_Text textTimer;
-    float timer = 1380.0f; //how long since the timer "started"
+    private float timer = 1380.0f; //how long since the timer "started"
     //Set this in the Inspector
     public GameObject byDay;
 
@@ -17,12 +17,12 @@ public class Tid : MonoBehaviour
     {
         timer += Time.deltaTime;   
         DisplayTid();
-        if(timer > 1560){
-            SceneManager.LoadScene("YouWon");
-        }
         if (timer > 1440){
             timer = 0.0f;
-        }     
+        }   
+        if(timer > 120.0f && timer < 120.5f){
+            SceneManager.LoadScene("YouWon");
+        }
     }
 
     void DisplayTid(){
