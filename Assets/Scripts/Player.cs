@@ -36,8 +36,6 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
-    public Animator _beerAnimator;
-
     bool right = true;
     
     public Sprite byNightStorsalen;
@@ -52,7 +50,6 @@ public class Player : MonoBehaviour
     {
        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
        rb = gameObject.GetComponent<Rigidbody2D>();
-       _beerAnimator = GetComponent<Animator>();
     }
 
 
@@ -62,11 +59,11 @@ public class Player : MonoBehaviour
         timer += Time.deltaTime;  
         speed = 5.0f;
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
-        if(playerDrunkenness.curDrunkenness <=20){
+        if(playerDrunkenness.curDrunkenness <20){
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness <= 70 && playerDrunkenness.curDrunkenness < 90) {
+        if(playerDrunkenness.curDrunkenness >= 70 && playerDrunkenness.curDrunkenness < 90) {
             speed = 7.0f;
             if(Input.GetKey(KeyCode.RightArrow)){
                 animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
@@ -212,7 +209,6 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             StartCoroutine(GenerateBeers());
             beerSource.Play();
-            _beerAnimator.SetTrigger("OnBeer");
         }
         if(collision.gameObject.tag == "Guards"){
             SceneManager.LoadScene("YouLost");
