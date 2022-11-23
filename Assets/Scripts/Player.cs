@@ -233,8 +233,11 @@ public class Player : MonoBehaviour
             StartCoroutine(GenerateBeers());
             beerSource.Play();
         }
-        if(collision.gameObject.tag == "Guards"){
+        if(collision.gameObject.tag == "Guards" && playerDrunkenness.curDrunkenness >= 70){
             SceneManager.LoadScene("YouLost");
+        }
+        if(collision.gameObject.tag == "Guards" && playerDrunkenness.curDrunkenness < 70){
+            Debug.Log("Hey! Ikke bli for full nå da!");
         }
         if(collision.gameObject.tag == "Walls"){
             if(Input.GetKey(KeyCode.LeftArrow)){
