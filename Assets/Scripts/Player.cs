@@ -73,22 +73,11 @@ public class Player : MonoBehaviour
         timer += Time.deltaTime;  
         speed = 5.0f;
         // Skal endre betingelsene når jeg får implementert øl. Dette er bare for å sjekke at det funker
-        if(playerDrunkenness.curDrunkenness < 19){
+        if(playerDrunkenness.curDrunkenness < 17){
             speed = 2.0f;
         }
 
-        if(playerDrunkenness.curDrunkenness >= 70 && playerDrunkenness.curDrunkenness < 90) {
-            speed = 7.0f;
-            if(Input.GetKey(KeyCode.RightArrow)){
-                animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-                transform.Translate(speed * Time.deltaTime,0,0);
-                gameObject.transform.localScale = new Vector3(0.3f,0.3f,1);
-                right = true;
-                CreateDust();
-            }
-        }
-
-        if(playerDrunkenness.curDrunkenness >= 90){
+        if(playerDrunkenness.curDrunkenness >= 80){
             if(Input.GetKey(KeyCode.UpArrow)){
                 transform.Translate(0,-speed * Time.deltaTime,0);
                 animator.SetFloat("Horizontal", 1);
