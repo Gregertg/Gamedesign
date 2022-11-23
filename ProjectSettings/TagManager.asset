@@ -8,6 +8,15 @@ TagManager:
   - Friends
   - Guards
   - Beer
+  - TextBubble
+  - TextBubble2
+  - TextBubble3
+  - TextBubble4
+  - TextBubble5
+  - TextBubble6
+  - TextBubble7
+  - TextBubble8
+  - TextBubble9
   layers:
   - Default
   - TransparentFX

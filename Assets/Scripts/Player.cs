@@ -12,6 +12,18 @@ public class Player : MonoBehaviour
 
     public Text friendsAmount;
 
+    public GameObject roNedGuard1;
+    public GameObject vannGuard1;
+    public GameObject rundeGuard1;
+
+    public GameObject roNedGuard2;
+    public GameObject vannGuard2;
+    public GameObject rundeGuard2;
+
+    public GameObject roNedGuard3;
+    public GameObject vannGuard3;
+    public GameObject rundeGuard3;
+
     public GameObject firstFriend;
     public GameObject secondFriend;
     public GameObject thirdFriend;
@@ -233,12 +245,136 @@ public class Player : MonoBehaviour
             StartCoroutine(GenerateBeers());
             beerSource.Play();
         }
+
+        // Her begynner Guard-kjøret
+
         if(collision.gameObject.tag == "Guards" && playerDrunkenness.curDrunkenness >= 70){
             SceneManager.LoadScene("YouLost");
         }
-        if(collision.gameObject.tag == "Guards" && playerDrunkenness.curDrunkenness < 70){
-            Debug.Log("Hey! Ikke bli for full nå da!");
+
+        // Guard 1 (Rundhallen)
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard") && playerDrunkenness.curDrunkenness < 70 && playerDrunkenness.curDrunkenness >= 50){
+            rundeGuard1 = GameObject.FindGameObjectWithTag("TextBubble3");
+            SpriteRenderer text3Guard1 = rundeGuard1.GetComponent<SpriteRenderer>();
+            text3Guard1.enabled = true;
+            StartCoroutine(textBubble3Coroutine());
+
+            IEnumerator textBubble3Coroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text3Guard1.enabled = false;
+                }
         }
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard") && playerDrunkenness.curDrunkenness < 50 && playerDrunkenness.curDrunkenness >= 20){
+            roNedGuard1 = GameObject.FindGameObjectWithTag("TextBubble");
+            SpriteRenderer text1Guard1 = roNedGuard1.GetComponent<SpriteRenderer>();
+            text1Guard1.enabled = true;
+            StartCoroutine(textBubbleCoroutine());
+
+            IEnumerator textBubbleCoroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text1Guard1.enabled = false;
+                }
+        }
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard") && playerDrunkenness.curDrunkenness < 20){
+            vannGuard1 = GameObject.FindGameObjectWithTag("TextBubble2");
+            SpriteRenderer text2Guard1 = vannGuard1.GetComponent<SpriteRenderer>();
+            text2Guard1.enabled = true;
+            StartCoroutine(textBubble2Coroutine());
+
+            IEnumerator textBubble2Coroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text2Guard1.enabled = false;
+                }
+        }
+
+        // Guard 2 (Edgar)
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard (1)") && playerDrunkenness.curDrunkenness < 70 && playerDrunkenness.curDrunkenness >= 50){
+            rundeGuard2 = GameObject.FindGameObjectWithTag("TextBubble5");
+            SpriteRenderer text3Guard2 = rundeGuard2.GetComponent<SpriteRenderer>();
+            text3Guard2.enabled = true;
+            StartCoroutine(textBubble3Coroutine());
+
+            IEnumerator textBubble3Coroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text3Guard2.enabled = false;
+                }
+        }
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard (1)") && playerDrunkenness.curDrunkenness < 50 && playerDrunkenness.curDrunkenness >= 20){
+            roNedGuard2 = GameObject.FindGameObjectWithTag("TextBubble4");
+            SpriteRenderer text1Guard2 = roNedGuard2.GetComponent<SpriteRenderer>();
+            text1Guard2.enabled = true;
+            StartCoroutine(textBubbleCoroutine());
+
+            IEnumerator textBubbleCoroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text1Guard2.enabled = false;
+                }
+        }
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard (1)") && playerDrunkenness.curDrunkenness < 20){
+            vannGuard2 = GameObject.FindGameObjectWithTag("TextBubble6");
+            SpriteRenderer text2Guard2 = vannGuard2.GetComponent<SpriteRenderer>();
+            text2Guard2.enabled = true;
+            StartCoroutine(textBubble2Coroutine());
+
+            IEnumerator textBubble2Coroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text2Guard2.enabled = false;
+                }
+        }
+
+        // Guard 3 (Storsalen)
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard (2)") && playerDrunkenness.curDrunkenness < 70 && playerDrunkenness.curDrunkenness >= 50){
+            rundeGuard3 = GameObject.FindGameObjectWithTag("TextBubble8");
+            SpriteRenderer text3Guard3 = rundeGuard3.GetComponent<SpriteRenderer>();
+            text3Guard3.enabled = true;
+            StartCoroutine(textBubble3Coroutine());
+
+            IEnumerator textBubble3Coroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text3Guard3.enabled = false;
+                }
+        }
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard (2)") && playerDrunkenness.curDrunkenness < 50 && playerDrunkenness.curDrunkenness >= 20){
+            roNedGuard3 = GameObject.FindGameObjectWithTag("TextBubble7");
+            SpriteRenderer text1Guard3 = roNedGuard3.GetComponent<SpriteRenderer>();
+            text1Guard3.enabled = true;
+            StartCoroutine(textBubbleCoroutine());
+
+            IEnumerator textBubbleCoroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text1Guard3.enabled = false;
+                }
+        }
+        if(collision.gameObject.tag == "Guards" && GameObject.Find("Guard (2)") && playerDrunkenness.curDrunkenness < 20){
+            vannGuard3 = GameObject.FindGameObjectWithTag("TextBubble9");
+            SpriteRenderer text2Guard3 = vannGuard3.GetComponent<SpriteRenderer>();
+            text2Guard3.enabled = true;
+            StartCoroutine(textBubble2Coroutine());
+
+            IEnumerator textBubble2Coroutine()
+                {
+                    //yield on a new YieldInstruction that waits for 5 seconds.
+                    yield return new WaitForSeconds(5);
+                    text2Guard3.enabled = false;
+                }
+        }
+    
         if(collision.gameObject.tag == "Walls"){
             if(Input.GetKey(KeyCode.LeftArrow)){
                 transform.Translate(speed * Time.deltaTime,0,0);
@@ -268,5 +404,3 @@ public class Player : MonoBehaviour
         dust.Play();
     }
 }
-
-
