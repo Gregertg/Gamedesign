@@ -17,6 +17,7 @@ TagManager:
   - TextBubble7
   - TextBubble8
   - TextBubble9
+  - moveScene
   layers:
   - Default
   - TransparentFX
