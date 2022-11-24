@@ -20,7 +20,7 @@ public class ChangeSceneWithButton : MonoBehaviour
     public IEnumerator LoadLevel(int levelIndex){
         transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
 
         SceneManager.LoadScene(levelIndex);
     }
