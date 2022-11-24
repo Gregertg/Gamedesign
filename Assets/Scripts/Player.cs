@@ -64,6 +64,8 @@ public class Player : MonoBehaviour
     {
        playerDrunkenness = GameObject.FindGameObjectWithTag("Player").GetComponent<Drunkenness>();
        rb = gameObject.GetComponent<Rigidbody2D>();
+       PlayerPrefs.SetFloat("Score", 0);
+       friends = 0;
     }
 
 
@@ -224,6 +226,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Friends"){
             friends++;
             friendsAmount.text = ": " + friends;
+            PlayerPrefs.SetFloat("Score", friends);
             Destroy(collision.gameObject);
             StartCoroutine(GenerateObjects());
             friendSource.Play();

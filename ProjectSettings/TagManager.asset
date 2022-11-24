@@ -17,6 +17,7 @@ TagManager:
   - TextBubble7
   - TextBubble8
   - TextBubble9
+  - Score
   layers:
   - Default
   - TransparentFX
