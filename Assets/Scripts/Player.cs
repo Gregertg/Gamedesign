@@ -237,6 +237,9 @@ public class Player : MonoBehaviour
             StartCoroutine(GenerateBeers());
             beerSource.Play();
         }
+        if(collision.gameObject.tag == "moveScene"){
+            SceneManager.LoadScene ("SampleScene");
+        }
 
         // Her begynner Guard-kjøret
 
